@@ -1,3 +1,11 @@
+# ------------------------------------------------------------------------------
+#                             mola_gnss_to_markers
+#
+# Copyright (C) 2025, Jose Luis Blanco-Claraco, contributors (see git commit history)
+# All rights reserved.
+# Released under BSD 3-Clause License. See LICENSE.
+# ------------------------------------------------------------------------------
+
 cmake_minimum_required(VERSION 3.8)
 project(mola_gnss_to_markers)
 
@@ -9,6 +17,10 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(mrpt_nav_interfaces REQUIRED)
+find_package(visualization_msgs REQUIRED)
+
+find_package(mrpt-topography REQUIRED)
 
 add_executable(mola_gnss_to_marker_node src/mola_gnss_to_marker_node.cpp)
 target_include_directories(mola_gnss_to_marker_node PUBLIC
@@ -19,7 +31,11 @@ ament_target_dependencies(
   mola_gnss_to_marker_node
   "rclcpp"
   "std_msgs"
+  "mrpt_nav_interfaces"
+  "visualization_msgs"
 )
+
+target_link_libraries(mola_gnss_to_marker_node mrpt::topography)
 
 install(TARGETS mola_gnss_to_marker_node
   DESTINATION lib/${PROJECT_NAME})
