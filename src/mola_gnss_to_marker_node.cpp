@@ -24,6 +24,32 @@ class MolaGnssToMarkerNode : public rclcpp::Node
     {
         RCLCPP_INFO(this->get_logger(), "Initializing GNSS to Marker Node");
 
+        declare_parameter<std::string>("input_topic_gps", input_topic_gps_);
+        get_parameter("input_topic_gps", input_topic_gps_);
+        RCLCPP_INFO(this->get_logger(), "input_topic_gps: %s", input_topic_gps_.c_str());
+
+        declare_parameter<std::string>("input_topic_georef_metadata", input_topic_georef_metadata_);
+        get_parameter("input_topic_georef_metadata", input_topic_georef_metadata_);
+        RCLCPP_INFO(
+            this->get_logger(), "input_topic_georef_metadata: %s",
+            input_topic_georef_metadata_.c_str());
+
+        declare_parameter<std::string>("output_topic_marker", output_topic_marker_);
+        get_parameter("output_topic_marker", output_topic_marker_);
+        RCLCPP_INFO(this->get_logger(), "output_topic_marker: %s", output_topic_marker_.c_str());
+
+        declare_parameter<double>("output_marker_line_width", output_marker_line_width_);
+        get_parameter("output_marker_line_width", output_marker_line_width_);
+        RCLCPP_INFO(
+            this->get_logger(), "output_marker_line_width: %0.3f", output_marker_line_width_);
+
+        declare_parameter<std::vector<double>>("output_marker_color", output_marker_color_);
+        get_parameter("output_marker_color", output_marker_color_);
+        RCLCPP_INFO(
+            this->get_logger(), "output_marker_color: {%0.3f, %0.3f, %0.3f, %0.3f}",
+            output_marker_color_[0], output_marker_color_[1], output_marker_color_[2],
+            output_marker_color_[3]);
+
         // REP-2003: https://ros.org/reps/rep-2003.html#id5
         // - Maps:  reliable transient-local
         const rclcpp::QoS mapQos    = rclcpp::QoS(rclcpp::KeepLast(1)).transient_local().reliable();
@@ -31,17 +57,17 @@ class MolaGnssToMarkerNode : public rclcpp::Node
         const rclcpp::QoS defaultQos = rclcpp::SystemDefaultsQoS();
 
         gps_subscription_ = this->create_subscription<sensor_msgs::msg::NavSatFix>(
-            "/gps", sensorQos,
+            input_topic_gps_, sensorQos,
             std::bind(&MolaGnssToMarkerNode::gps_callback, this, std::placeholders::_1));
 
         geo_metadata_subscription_ =
             this->create_subscription<mrpt_nav_interfaces::msg::GeoreferencingMetadata>(
-                "/lidar_odometry/geo_ref_metadata", mapQos,
+                input_topic_georef_metadata_, mapQos,
                 std::bind(
                     &MolaGnssToMarkerNode::geo_metadata_callback, this, std::placeholders::_1));
 
         marker_publisher_ = this->create_publisher<visualization_msgs::msg::Marker>(
-            "/gnns_georef_marker", defaultQos);
+            output_topic_marker_, defaultQos);
     }
 
    private:
@@ -111,12 +137,12 @@ class MolaGnssToMarkerNode : public rclcpp::Node
             marker.points.push_back(p);
         }
 
-        marker.scale.x = 0.3;  // Line width
+        marker.scale.x = output_marker_line_width_;
 
-        marker.color.a = 0.6;
-        marker.color.r = 0.0;
-        marker.color.g = 1.0;
-        marker.color.b = 0.0;
+        marker.color.a = output_marker_color_[0];
+        marker.color.r = output_marker_color_[1];
+        marker.color.g = output_marker_color_[2];
+        marker.color.b = output_marker_color_[3];
 
         marker_publisher_->publish(marker);
     }
@@ -134,6 +160,12 @@ class MolaGnssToMarkerNode : public rclcpp::Node
         // Store metadata for future processing:
         georef_metadata_ = *msg;
     }
+
+    std::string         input_topic_gps_             = "/gps";
+    std::string         input_topic_georef_metadata_ = "/lidar_odometry/geo_ref_metadata";
+    std::string         output_topic_marker_         = "/gnss_georef_marker";
+    double              output_marker_line_width_    = 0.3;
+    std::vector<double> output_marker_color_         = {0.0, 1.0, 0.0, 0.6};
 
     rclcpp::Subscription<sensor_msgs::msg::NavSatFix>::SharedPtr  gps_subscription_;
     rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedPtr marker_publisher_;
