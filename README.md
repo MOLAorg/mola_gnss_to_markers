@@ -17,6 +17,37 @@ Takes GNSS (GPS) readings, a MOLA georeferenced map, and publishes markers to vi
 
     ros2 launch mola_gnss_to_markers mola_gnss_to_markers_launch.py
 
+
+<details>
+
+<summary>All ROS2 launch arguments</summary>
+
+    ros2 launch mola_gnss_to_markers mola_gnss_to_markers_launch.py --show-args
+    Arguments (pass arguments as '<name>:=<value>'):
+    
+        'input_topic_gps':
+            no description given
+            (default: '/gps')
+    
+        'input_topic_georef_metadata':
+            no description given
+            (default: '/lidar_odometry/geo_ref_metadata')
+    
+        'output_topic_marker':
+            no description given
+            (default: '/gnss_georef_marker')
+    
+        'output_marker_line_width':
+            no description given
+            (default: '0.3')
+    
+        'output_marker_color':
+            no description given
+            (default: '[0.0, 1.0, 0.0, 0.6]')
+
+</details>
+
+
 ## Input topics:
 
 * ``/lidar_odometry/geo_ref_metadata`` (``mrpt_nav_interfaces/msg/GeoreferencingMetadata``)
