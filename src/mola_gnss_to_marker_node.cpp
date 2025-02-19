@@ -139,10 +139,10 @@ class MolaGnssToMarkerNode : public rclcpp::Node
 
         marker.scale.x = output_marker_line_width_;
 
-        marker.color.a = output_marker_color_[0];
-        marker.color.r = output_marker_color_[1];
-        marker.color.g = output_marker_color_[2];
-        marker.color.b = output_marker_color_[3];
+        marker.color.a = output_marker_color_[3];
+        marker.color.r = output_marker_color_[0];
+        marker.color.g = output_marker_color_[1];
+        marker.color.b = output_marker_color_[2];
 
         marker_publisher_->publish(marker);
     }
