@@ -2,8 +2,8 @@
 Changelog for package mola_gnss_to_markers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.0 (2025-02-26)
+------------------
 * Add GIF screenshot to README
 * Merge pull request `#4 <https://github.com/MOLAorg/mola_gnss_to_markers/issues/4>`_ from r-aguilera/develop
   Fix wrong marker color assignment
