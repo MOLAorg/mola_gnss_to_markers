@@ -13,6 +13,9 @@
 
 Takes GNSS (GPS) readings, a MOLA georeferenced map, and publishes markers to visualize the datums as ellipsoids on the map.
 
+![mola_gnss_to_marker_demo](https://github.com/user-attachments/assets/f3b7201c-615a-4f00-800e-bbbe18925fc4)
+
+
 ## Usage
 
     ros2 launch mola_gnss_to_markers mola_gnss_to_markers_launch.py
