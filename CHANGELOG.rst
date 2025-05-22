@@ -2,6 +2,15 @@
 Changelog for package mola_gnss_to_markers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* docs: badge table, add kilted badge.
+* better direct integration with vscode and colcon
+* Merge pull request `#5 <https://github.com/MOLAorg/mola_gnss_to_markers/issues/5>`_ from ahcorde/ahcorde/rolling/replace_ament_target_dependencies
+  Replace ament_target_dependencies with target_link_libraries
+* Replace ament_target_dependencies with target_link_libraries
+* Contributors: Alejandro Hernandez Cordero, Jose Luis Blanco-Claraco
+
 0.1.0 (2025-02-26)
 ------------------
 * Add GIF screenshot to README
