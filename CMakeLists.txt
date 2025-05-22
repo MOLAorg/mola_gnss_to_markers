@@ -27,12 +27,12 @@ target_include_directories(mola_gnss_to_marker_node PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
 target_compile_features(mola_gnss_to_marker_node PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
-ament_target_dependencies(
+target_link_libraries(
   mola_gnss_to_marker_node
-  "rclcpp"
-  "std_msgs"
-  "mrpt_nav_interfaces"
-  "visualization_msgs"
+  rclcpp::rclcpp
+  ${std_msgs_TARGETS}
+  ${mrpt_nav_interfaces}
+  ${visualization_msgs}
 )
 
 target_link_libraries(mola_gnss_to_marker_node mrpt::topography)
