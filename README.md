@@ -6,6 +6,7 @@
 | --- | --- | --- |
 | ROS 2 Humble (u22.04) | [![Build Status](https://build.ros2.org/job/Hdev__mola_gnss_to_markers__ubuntu_jammy_amd64/badge/icon)](https://build.ros2.org/job/Hdev__mola_gnss_to_markers__ubuntu_jammy_amd64/) | [![Version](https://img.shields.io/ros/v/humble/mola_gnss_to_markers)](https://index.ros.org/search/?term=mola_gnss_to_markers) |
 | ROS 2 Jazzy (u24.04) | [![Build Status](https://build.ros2.org/job/Jdev__mola_gnss_to_markers__ubuntu_noble_amd64/badge/icon)](https://build.ros2.org/job/Jdev__mola_gnss_to_markers__ubuntu_noble_amd64/) | [![Version](https://img.shields.io/ros/v/jazzy/mola_gnss_to_markers)](https://index.ros.org/search/?term=mola_gnss_to_markers) |
+| ROS 2 Kilted (u24.04) | [![Build Status](https://build.ros2.org/job/Kdev__mola_gnss_to_markers__ubuntu_noble_amd64/badge/icon)](https://build.ros2.org/job/Kdev__mola_gnss_to_markers__ubuntu_noble_amd64/) | [![Version](https://img.shields.io/ros/v/kilted/mola_gnss_to_markers)](https://index.ros.org/search/?term=mola_gnss_to_markers) |
 | ROS 2 Rolling (u24.04) | [![Build Status](https://build.ros2.org/job/Rdev__mola_gnss_to_markers__ubuntu_noble_amd64/badge/icon)](https://build.ros2.org/job/Rdev__mola_gnss_to_markers__ubuntu_noble_amd64/) | [![Version](https://img.shields.io/ros/v/rolling/mola_gnss_to_markers)](https://index.ros.org/search/?term=mola_gnss_to_markers) |
 
 
