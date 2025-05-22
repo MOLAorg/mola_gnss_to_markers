@@ -1,2 +1,17 @@
-.vscode
 CMakeLists.txt.*
+
+# colcon
+build
+build-*
+*~
+install*
+log
+
+
+
+#visual studio
+.vs/*
+.vscode/*
+!.vscode/settings.json
+**/.vscode
+.cache
