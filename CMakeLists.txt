@@ -31,8 +31,8 @@ target_link_libraries(
   mola_gnss_to_marker_node
   rclcpp::rclcpp
   ${std_msgs_TARGETS}
-  ${mrpt_nav_interfaces}
-  ${visualization_msgs}
+  ${mrpt_nav_interfaces_TARGETS}
+  ${visualization_msgs_TARGETS}
 )
 
 target_link_libraries(mola_gnss_to_marker_node mrpt::topography)
