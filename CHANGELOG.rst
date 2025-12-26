@@ -2,6 +2,12 @@
 Changelog for package mola_gnss_to_markers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Relax unit tests (don't use ament clang-format)
+* Update broken link to ROS Index
+* Contributors: Jose Luis Blanco-Claraco
+
 0.1.1 (2025-05-22)
 ------------------
 * docs: badge table, add kilted badge.
