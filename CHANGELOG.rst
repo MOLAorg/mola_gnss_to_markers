@@ -2,8 +2,8 @@
 Changelog for package mola_gnss_to_markers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.2 (2025-12-26)
+------------------
 * Relax unit tests (don't use ament clang-format)
 * Update broken link to ROS Index
 * Contributors: Jose Luis Blanco-Claraco
