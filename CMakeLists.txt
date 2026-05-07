@@ -6,7 +6,7 @@
 # Released under BSD 3-Clause License. See LICENSE.
 # ------------------------------------------------------------------------------
 
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.22...3.31)  # Ubuntu 22.04+
 project(mola_gnss_to_markers)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
