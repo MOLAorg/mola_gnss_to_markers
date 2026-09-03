@@ -13,7 +13,7 @@
   <depend>std_msgs</depend>
   <depend>mrpt_nav_interfaces</depend>
   <depend>visualization_msgs</depend>
-  <depend>mrpt_libobs</depend> <!-- mrpt-topography, actually -->
+  <depend>mrpt_topography</depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_cmake_xmllint</test_depend>
