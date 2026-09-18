@@ -19,8 +19,9 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(mrpt_nav_interfaces REQUIRED)
 find_package(visualization_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
 
-find_package(mrpt-topography REQUIRED)
+find_package(mrpt_topography REQUIRED)
 
 add_executable(mola_gnss_to_marker_node src/mola_gnss_to_marker_node.cpp)
 target_include_directories(mola_gnss_to_marker_node PUBLIC
@@ -33,9 +34,10 @@ target_link_libraries(
   ${std_msgs_TARGETS}
   ${mrpt_nav_interfaces_TARGETS}
   ${visualization_msgs_TARGETS}
+  ${sensor_msgs_TARGETS}
 )
 
-target_link_libraries(mola_gnss_to_marker_node mrpt::topography)
+target_link_libraries(mola_gnss_to_marker_node mrpt::mrpt_topography)
 
 install(TARGETS mola_gnss_to_marker_node
   DESTINATION lib/${PROJECT_NAME})
