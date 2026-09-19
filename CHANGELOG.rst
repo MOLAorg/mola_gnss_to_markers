@@ -2,6 +2,19 @@
 Changelog for package mola_gnss_to_markers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Port to MRPT 3.x
+* chore: more robust formatter script
+* docs: add ROS 2 Lyrical badge row, update Rolling to Ubuntu 26.04 (resolute)
+* ci: fix Jazzy Jalisco EOL date in CI workflow comment
+* CI: simplify clang-format helpers and use ros: docker images for stable builds
+* CI: workaround to xml linter
+* fix: wrap find -iname predicates in parentheses to scope them to listed dirs
+* CI: skip xmllint and cmakelist tests
+* bump min req cmake version to 3.22
+* Contributors: Jose Luis Blanco-Claraco
+
 0.1.2 (2025-12-26)
 ------------------
 * Relax unit tests (don't use ament clang-format)
