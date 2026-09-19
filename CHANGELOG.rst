@@ -2,8 +2,8 @@
 Changelog for package mola_gnss_to_markers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.2.0 (2026-09-19)
+------------------
 * Port to MRPT 3.x
 * chore: more robust formatter script
 * docs: add ROS 2 Lyrical badge row, update Rolling to Ubuntu 26.04 (resolute)
